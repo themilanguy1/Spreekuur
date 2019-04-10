@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class PersonalData
+ * Class QuestionPersonalData
  */
-class PersonalData
+class QuestionPersonalData
 {
     /**
      * @var array Personal data including: email, sex, age range, name, last name, phone number, medication,
@@ -18,21 +18,19 @@ class PersonalData
             "sex" => $sex,
             "age_range" => $age_range,
             "name" => $name,
-            "last_name" => $last_name,
             "phone_number" => $phone_number,
             "medication" => $medication,
             "health_issues" => $health_issues,
             "extra_personal_info" => $extra_personal_info
         );
-        $this->setPersonalData();
     }
 
     /**
-     * Sets personal data.
+     * Updates personal data.
      */
-    protected function setPersonalData()
+    public function updatePersonalData()
     {
-        $_SESSION['personal_data'] = $this->personal_data;
-        $_SESSION['personal_data_given'] = true;
+        $_SESSION['question_personal_data'] = $this->personal_data;
+        $_SESSION['question_personal_data_given'] = true;
     }
 }
