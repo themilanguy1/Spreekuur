@@ -1,4 +1,6 @@
 <?php
+require_once('classes/Autoloader.php');
+Session::Start();
 ?>
 <html>
 <head>
@@ -10,21 +12,15 @@
 <script type="text/javascript" src="script/font-awesome/font-awesome.js"></script>
 <body>
 <div class="container">
-    <a href="feedback.php">
-        <img src="img/feedback.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-             style="width:200px;height:200px;">
-    </a>
-    <br>
-    <a href="vragen.php">
-        <img src="img/vragen.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-             style="width:200px;height:200px;">
-    </a>
-    <br>
-    <a href="inbox.php">
-        <img src="img/mail.png" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-             style="width:200px;height:200px;">
-    </a>
-    <a href="home.php" class="btn btn-primary btn-lg float-left " id="btnHome"><i class="fas fa-undo"></i> Terug</a>
+    <?php
+    if(Session::PersonalDataStatus()) {
+        echo "Je hebt informatie gegeven";
+        echo "<br />";
+        echo "<h3>PLACEHOLDER WAIT TILL REINFORCEMENTS ARRIVE</h3>";
+    } else {
+        header('Location: vragen_persoonlijke_info.php');
+    }
+    ?>
 </div>
 </body>
 <html>
