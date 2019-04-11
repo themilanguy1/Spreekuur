@@ -11,7 +11,7 @@ class QuestionPersonalData
      */
     protected $personal_data = [];
 
-    public function __construct($email, $sex, $age_range, $name, $last_name, $phone_number, $medication, $health_issues, $extra_personal_info)
+    public function __construct($email, $sex, $age_range, $name, $phone_number, $medication, $health_issues, $extra_personal_info)
     {
         $this->personal_data = array(
             "email" => $email,

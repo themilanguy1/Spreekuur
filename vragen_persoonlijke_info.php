@@ -59,7 +59,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
             <h5>Optionele Velden </h5>
             <p></p>
             <div class="form-group">
-                <label>Voornaam</label>
+                <label>Voor en Achternaam</label>
                 <input type="text" class="form-control form-control-md rounded-0" name="name"
                        placeholder="Kees Janssen">
                 <label>Telefoon Nummer (een andere manier om met u contact op te nemen.</label>
