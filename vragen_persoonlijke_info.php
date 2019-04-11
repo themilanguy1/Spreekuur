@@ -1,12 +1,13 @@
 <?php
 require_once('classes/Autoloader.php');
-Session::Start();
+Session::start();
 
 if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
-    $patient_data = new PersonalData(
-        $_POST['email'], $_POST['sex'], $_POST['age_range'], $_POST['name'], $_POST['last_name'],
-        $_POST['phone_number'], $_POST['medication'], $_POST['health_issues'], $_POST['extra_personal_info']
+    $question_personal_data = new QuestionPersonalData(
+        $_POST['email'], $_POST['sex'], $_POST['age_range'], $_POST['name'], $_POST['phone_number'],
+        $_POST['medication'], $_POST['health_issues'], $_POST['extra_personal_info']
     );
+    $question_personal_data->updatePersonalData();
     header('Location: vragen.php');
 }
 ?>
@@ -21,7 +22,8 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
 <div class="card rounded-0">
     <div class="card-header">
         <h4 class="mb-0">Voordat u uw vraag stelt, zouden wij nog iets meer informatie willen hebben.</h4>
-        <p>Wij gebruiken deze informatie alleen maar </p>
+        <p>Wij gebruiken deze informatie alleen maar om u beter te kunnen helpen.</p>
+        <p>Er wordt niks van uw gegevens opgeslagen tenzij u dat wilt voor toekomstige vragen.</p>
     </div>
     <div class="card-body bg-light">
         <form class="form" method="POST">
@@ -59,10 +61,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
             <div class="form-group">
                 <label>Voornaam</label>
                 <input type="text" class="form-control form-control-md rounded-0" name="name"
-                       placeholder="Kees">
-                <label>Achternaam</label>
-                <input type="text" class="form-control form-control-md rounded-0" name="last_name"
-                       placeholder="Janssen">
+                       placeholder="Kees Janssen">
                 <label>Telefoon Nummer (een andere manier om met u contact op te nemen.</label>
                 <input type="text" class="form-control form-control-md rounded-0" name="phone_number"
                        placeholder="0612345678">
@@ -79,7 +78,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
                           placeholder="allergie/roken/drinken"></textarea>
             </div>
             <a href="home.php">
-            <button type="button" class="btn btn-primary btn-lg float-left">Terug</button>
+                <button type="button" class="btn btn-primary btn-lg float-left">Terug</button>
             </a>
             <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Verder
             </button>

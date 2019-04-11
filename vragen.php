@@ -1,6 +1,6 @@
 <?php
 require_once('classes/Autoloader.php');
-Session::Start();
+Session::start();
 ?>
 <html>
 <head>
@@ -13,10 +13,10 @@ Session::Start();
 <body>
 <div class="container">
     <?php
-    if (Session::PersonalDataStatus()) {
-        echo "Je hebt informatie gegeven";
+    if(Session::questionPersonalDataStatus()) {
+        echo "<a href='vragen_persoonlijke_info.php'>opnieuw informatie toevoegen</a>";
         echo "<br />";
-        echo "<h3>PLACEHOLDER WAIT TILL REINFORCEMENTS ARRIVE</h3>";
+        echo "hier komt de vragen invoer.";
     } else {
         header('Location: vragen_persoonlijke_info.php');
     }

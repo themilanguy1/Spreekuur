@@ -13,7 +13,7 @@ class Utility
      *
      *  Connects Server to database using PDO.
      */
-    public static function PDOConnect($servername = "localhost", $username = "root", $password = NULL)
+    public static function pdoConnect($servername = "localhost", $username = "root", $password = NULL)
     {
         try {
             $conn = new PDO("mysql:host=$servername;dbname=aldidlheijn", $username, $password);

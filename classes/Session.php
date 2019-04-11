@@ -8,7 +8,7 @@ class Session
     /**
      * Starts session if not already started.
      */
-    public static function Start()
+    public static function start()
     {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
@@ -18,9 +18,9 @@ class Session
     /**
      * Logs user out and redirects to Home.php .
      */
-    public static function DestroySession()
+    public static function destroySession()
     {
-        if  (Session::Start()){
+        if  (Session::start()){
             session_destroy();
             header('Location: home.php');
             die;
@@ -33,11 +33,25 @@ class Session
     /**
      * @return bool
      *
-     * Checks login status.
+     * Checks question personal data status.
      */
-    public static function PersonalDataStatus()
+    public static function questionPersonalDataStatus()
     {
-        if (isset($_SESSION['personal_data_given']) && $_SESSION['personal_data_given'] == true) {
+        if (isset($_SESSION['question_personal_data_given']) && $_SESSION['question_personal_data_given'] == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @return bool
+     *
+     * Checks feedback personal data status.
+     */
+    public static function feedbackPersonalDataStatus()
+    {
+        if (isset($_SESSION['feedback_personal_data_given']) && $_SESSION['feedback_personal_data_given'] == true) {
             return true;
         } else {
             return false;
