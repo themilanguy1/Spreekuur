@@ -43,8 +43,8 @@ Session::start();
         </a>
     </div>
     </form>
-    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>Help</a>
-    <a href="login.php" class="btn btn-primary btn-lg float-right " id="btnLogin"><i class="fas fa-sign-in-alt"></i>Login</a>
+    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>&nbspHelp</a>
+    <a href="home.php" class="btn btn-primary btn-lg float-right " id="btnHome"><i class="fas fa-undo"></i>&nbspTerug</a>
 </div>
 </body>
 <html>

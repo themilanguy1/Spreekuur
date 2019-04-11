@@ -8,9 +8,11 @@ Session::start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+<!--    <link rel="stylesheet" type="text/css" href="style/style.css">-->
 </head>
 <script type="text/javascript" src="script/font-awesome/font-awesome.js"></script>
 <body>
+<!--<body class="background">-->
 <div class="container">
     <div class="row justify-content-md-center">
     <a href="feedback.php">
@@ -32,8 +34,7 @@ Session::start();
              style="width:200px;height:200px;">
     </a>
     </div>
-    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>Help</a>
-    <a href="login.php" class="btn btn-primary btn-lg float-right " id="btnLogin"><i class="fas fa-sign-in-alt"></i>Login</a>
+    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>&nbspHelp</a>
 </div>
 </body>
 </html>
