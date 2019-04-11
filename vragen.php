@@ -13,7 +13,7 @@ Session::Start();
 <body>
 <div class="container">
     <?php
-    if(Session::PersonalDataStatus()) {
+    if (Session::PersonalDataStatus()) {
         echo "Je hebt informatie gegeven";
         echo "<br />";
         echo "<h3>PLACEHOLDER WAIT TILL REINFORCEMENTS ARRIVE</h3>";
@@ -21,6 +21,30 @@ Session::Start();
         header('Location: vragen_persoonlijke_info.php');
     }
     ?>
+    <form method="get">
+    <div class="row justify-content-md-center">
+        <a href="form_vragen.php?vraag=1">
+            <img src="img/feedback.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
+                 style="width:200px;height:200px;">
+        </a>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+        <a href="form_vragen.php?vraag=2">
+            <img src="img/vragen.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
+                 style="width:200px;height:200px;">
+        </a>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+        <a href="form_vragen.php?vraag=3">
+            <img src="img/mail.png" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
+                 style="width:200px;height:200px;">
+        </a>
+    </div>
+    </form>
+    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>Help</a>
+    <a href="login.php" class="btn btn-primary btn-lg float-right " id="btnLogin"><i class="fas fa-sign-in-alt"></i>Login</a>
 </div>
 </body>
 <html>
