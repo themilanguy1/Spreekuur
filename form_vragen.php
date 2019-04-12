@@ -51,7 +51,7 @@ if (isset($_POST['question_data'])) {
         </button>
     </form>
     <br>
-    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i&nbsp>Help</a>
+    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>&nbspHelp</a>
     <a href="vragen.php" class="btn btn-primary btn-lg float-left mx-2" id="btnBack"><i class="fas fa-undo"></i>&nbspTerug</a>
 </div>
 </body>
