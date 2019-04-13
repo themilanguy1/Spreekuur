@@ -11,9 +11,9 @@ Session::start();
 </head>
 <script type="text/javascript" src="script/font-awesome/font-awesome.js"></script>
 <body>
-<div class="container">
+<div class="container-fluid">
     <?php
-    if(Session::questionPersonalDataStatus()) {
+    if (Session::questionPersonalDataStatus()) {
         echo "<a href='vragen_persoonlijke_info.php'>opnieuw informatie toevoegen</a>";
         echo "<br />";
         echo "hier komt de vragen invoer.";
@@ -22,29 +22,29 @@ Session::start();
     }
     ?>
     <form method="get">
-    <div class="row justify-content-md-center">
-        <a href="form_vragen.php?vraag=1">
-            <img src="img/feedback.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-                 style="width:200px;height:200px;">
-        </a>
-    </div>
-    <br>
-    <div class="row justify-content-md-center">
-        <a href="form_vragen.php?vraag=2">
-            <img src="img/vragen.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-                 style="width:200px;height:200px;">
-        </a>
-    </div>
-    <br>
-    <div class="row justify-content-md-center">
-        <a href="form_vragen.php?vraag=3">
-            <img src="img/mail.png" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-                 style="width:200px;height:200px;">
-        </a>
-    </div>
+        <div class="row justify-content-md-center">
+            <a href="form_vragen.php?vraag=1">
+                Optie: 1
+            </a>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <a href="form_vragen.php?vraag=2">
+                Optie: 2
+            </a>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <a href="form_vragen.php?vraag=3">
+                Optie: 3
+            </a>
+        </div>
     </form>
-    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>&nbspHelp</a>
-    <a href="home.php" class="btn btn-primary btn-lg float-right " id="btnHome"><i class="fas fa-undo"></i>&nbspTerug</a>
+    <div class="col-16 align-bottom col-lg">
+        <a href="help.php" class="btn btn-primary btn-lg float-left" id="btnHelp"><i
+                    class="far fa-question-circle"></i>&nbspHelp</a>
+        <a href="home.php" class="btn btn-primary btn-lg float-right" id="btnHome"><i class="fas fa-undo"></i>&nbspTerug</a>
+    </div>
 </div>
 </body>
 <html>

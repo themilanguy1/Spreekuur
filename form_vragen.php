@@ -13,12 +13,10 @@ if (isset($_GET['vraag'])) {
 </div>";
     $vraag = null;
 }
-if (isset($_POST['question_data'])) {
-    // TODO Send data to class where it's gonna be saved in database(what about the user:Need to discuss.)
-    if (!empty($_POST['question_data'])) {
-        echo "<h5>Hier print input data [TEST]:</h5>";
-        echo "<h6>" . $_POST['question_data'] . "</h6>";
-        $question_form_data = new Question($_POST['question_data']);
+if (isset($_POST['question_form'])) {
+    // TODO Send data to class where it's gonna be saved in database.
+    if (!empty($_POST['question_form'])) {
+        $question_form_data = new Question($_POST['question_form'], $_GET['vraag']);
         $question_form_data->sendFormQuestion();
     } else {
         echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
@@ -28,7 +26,8 @@ if (isset($_POST['question_data'])) {
     <span aria-hidden='true'>&times;</span>
   </button>
 </div>";
-    }};
+    }
+};
 ?>
 <html>
 <head>
@@ -40,19 +39,23 @@ if (isset($_POST['question_data'])) {
 <script type="text/javascript" src="script/font-awesome/font-awesome.js"></script>
 <script type="text/javascript" src="script/jquery-3.3.1.js"></script>
 <body>
-<div class="container">
+<div class="container-fluid">
     <h1>Uw keuze is : <?= $vraag ?></h1>
     <form method="post">
         <div class="form-group">
             <label for="question_textarea">Example textarea</label>
-            <textarea name="question_data" class="form-control" rows="10"></textarea>
+            <textarea name="question_form" class="form-control" rows="10"></textarea>
         </div>
-        <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnSend">Stuur
+        <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnSend"><i
+                    class="far fa-share-square"></i>Stuur
         </button>
     </form>
     <br>
-    <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i class="far fa-question-circle"></i>&nbspHelp</a>
-    <a href="vragen.php" class="btn btn-primary btn-lg float-left mx-2" id="btnBack"><i class="fas fa-undo"></i>&nbspTerug</a>
+    <div class="col-16 align-bottom col-lg">
+        <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i
+                    class="far fa-question-circle"></i>&nbspHelp</a>
+        <a href="vragen.php" class="btn btn-primary btn-lg float-left mx-2" id="btnBack"><i class="fas fa-undo"></i>&nbspTerug</a>
+    </div>
 </div>
 </body>
 </html>

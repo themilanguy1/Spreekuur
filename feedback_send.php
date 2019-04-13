@@ -12,7 +12,7 @@ Session::Start();
 <script type="text/javascript" src="script/font-awesome/font-awesome.js"></script>
 <body>
 <div class="container-fluid">
-    <h1 class="text-center">Bedankt voor u vraag!</h1>
+    <h1 class="text-center">Bedankt voor u feedback!</h1>
     <h4 class="text-center">Hier zal text toevoegt zijn.</h4>
     <div class="col-16 align-bottom col-lg">
         <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i
