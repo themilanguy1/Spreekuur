@@ -33,7 +33,7 @@ class Utility
      *  string Name of table in database.
      * @return int|mixed
      *
-     * returns appropriate new id for table.
+     * Returns appropriate new id for table.
      */
     public static function GetNewSqlId($id_column, $table)
     {
@@ -47,5 +47,27 @@ class Utility
             $new_id = 1;
         }
         return $new_id;
+    }
+
+    /**
+     * @param $selected_option
+     *  string Selected option in pictogram menu.
+     *
+     * Generates html select options for parts of the body.
+     * Currently selected parameter decides selected option.
+     */
+    public static function generateQuestionBodyPartDropdown($selected_option) {
+        $options = array("Orgaan stelsel", "Circulatie stelsel", "Spijsverteringsstelsel",
+            "Urinewegstelsel", "Ademhalingsstelsel", "Huid", "Hormonale stelsel",
+            "Zenuwstelsel", "Sensorisch stelsel", "Motorisch stelsel", "Voorplantingsstelsel"
+            );
+
+        foreach($options as $option) {
+            if($selected_option == $option) {
+                echo "<option value=".$option." selected>".$option."</option>";
+            } else {
+                echo "<option value=".$option.">".$option."</option>";
+            }
+        }
     }
 }

@@ -2,11 +2,6 @@
 require_once('../classes/Autoloader.php');
 Session::start();
 
-if (isset($_POST['submit'])) {
-    var_dump($_POST);
-} else {
-    echo "fuck off";
-}
 ?>
 
 <html>
@@ -29,52 +24,59 @@ if (Session::personalFeedbackDataStatus()) {
     header('Location: persoonlijke_info_invoer.php');
 }
 ?>
-<div class="container-fluid">
-    <h1>Feedback</h1>
-    <form method="post">
-        <div class="row">
-            <label>Uw reactie : </label>
-            <div class="col-xs-4">
-                <input type="radio" name="reaction" value="1" id="iets-1" required>
-                <label for="iets-1">
-                    <img src="../img/bad.png" alt="Geen afbeelding gevonden" class="rounded float-left mx-5 d-block">
-                </label>
+<div class="container">
+    <div class="row">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h1>Feedback</h1>
             </div>
-            <div class="col-xs-4">
-                <input type="radio" name="reaction" value="2" id="iets-2" required>
-                <label for="iets-2">
-                    <img src="../img/ok.png" alt="Geen afbeelding gevonden" class="rounded float-left mx-5 d-block">
-                </label>
-            </div>
-            <div class="col-xs-4">
-                <input type="radio" name="reaction" value="1" id="iets-3" required>
-                <label for="iets-3">
-                    <img src="../img/good.png" alt="Geen afbeelding gevonden" class="rounded float-left mx-5 d-block">
-                </label>
+            <div class="card-body bg-light">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h4>Was de geleverde zorg naar wens?: </h4>
+                        </div>
+                        <div class="col-sm-4" align="center"><input type="radio" name="reaction" value="1" id="mood-1"
+                                                                    required>
+                            <label for="mood-1">
+                                <img src="../img/bad.png" alt="slecht"
+                                     class="rounded d-block">
+                            </label>
+                        </div>
+                        <div class="col-sm-4" align="center"><input type="radio" name="reaction" value="2" id="mood-2"
+                                                                    required>
+                            <label for="mood-2">
+                                <img src="../img/ok.png" alt="matig"
+                                     class="rounded d-block">
+                            </label>
+                        </div>
+                        <div class="col-sm-4" align="center">
+                            <input type="radio" name="reaction" value="1" id="mood-3" required>
+                            <label for="mood-3">
+                                <img src="../img/good.png" alt="goed"
+                                     class="rounded d-block">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <br>
+                        <label>Uw zorginstelling : </label>
+                        <select name="feedback_zorg">
+                            <option value="Maasstadziekenhuis">Maasstadziekenhuis</option>
+                            <option value="Revalidatiecentrumrotterdamzuid">revalidatiecentrum rotterdam zuid</option>
+                            <option value="ErasmusMC">Erasmus MC</option>
+                        </select>
+                        <br><br>
+                        <label for="feedback_textarea">Uw feedback : </label>
+                        <textarea name="feedback_form_text" class="form-control" rows="10"></textarea>
+                    </div>
+                    <a href="persoonlijke_info_invoer.php" class="btn btn-primary btn-lg float-left mx-2" id="btnBack"><i
+                                class="fas fa-undo"></i>&nbspTerug</a>
+                    <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnSend"><i
+                                class="far fa-share-square"></i>&nbspVersturen
+                    </button>
+                </form>
             </div>
         </div>
-        <div class="form-group">
-            <br>
-            <label>Uw zorginstelling : </label>
-            <select name="feedback_zorg">
-                <option value="zorginstelling1">Zorginstellling 1</option>
-                <option value="zorginstelling2">Zorginstellling 2</option>
-                <option value="zorginstelling3">Zorginstellling 3</option>
-            </select>
-            </br></br>
-            <label for="feedback_textarea">Uw feedback : </label>
-            <textarea name="feedback_form_text" class="form-control" rows="10"></textarea>
-        </div>
-        <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnSend"><i
-                    class="far fa-share-square"></i>Versturen
-        </button>
-    </form>
-    <br>
-    <div class="col-16 align-bottom col-lg">
-        <a href="../help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i
-                    class="far fa-question-circle"></i>&nbspHelp</a>
-        <a href="../home.php" class="btn btn-primary btn-lg float-left mx-2" id="btnBack"><i class="fas fa-undo"></i>&nbspTerug</a>
-    </div>
-</div>
 </body>
 </html>

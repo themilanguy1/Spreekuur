@@ -18,35 +18,22 @@ if (Session::personalQuestionDataStatus()) {
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <?php
-                echo "<a href='persoonlijke_info_invoer.php'>opnieuw informatie toevoegen</a>";
-                echo "<br />";
-                echo "hier komt de vragen invoer.";
-                ?>
+                <a href='persoonlijke_info_invoer.php'>
+                    <button class="btn btn-primary">opnieuw informatie toevoegen</button>
+                </a>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-12" style="margin-top:1em;">
                 <form method="get">
                     <div class="justify-content-md-center">
-                        <a href="vraag_stellen.php?lichaam_stelsel=1">
+                        <a href="vraag_stellen.php?lichaam_stelsel=Orgaan stelsel">
                             Optie: 1
-                        </a>
-                    </div>
-                    <br>
-                    <div class="justify-content-md-center">
-                        <a href="vraag_stellen.php?lichaam_stelsel=2">
-                            Optie: 2
-                        </a>
-                    </div>
-                    <br>
-                    <div class="justify-content-md-center">
-                        <a href="vraag_stellen.php?lichaam_stelsel=3">
-                            Optie: 3
                         </a>
                     </div>
                 </form>
             </div>
             <div class="align-bottom col-lg">
-                <a href="../home.php" class="btn btn-primary btn-lg float-left" id="btnHome"><i class="fas fa-undo"></i>&nbspTerug</a>
+                <a href="persoonlijke_info_invoer.php" class="btn btn-primary btn-lg float-left" id="btnHome"><i
+                            class="fas fa-undo"></i>&nbspTerug</a>
             </div>
         </div>
     </div>

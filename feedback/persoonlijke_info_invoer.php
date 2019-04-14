@@ -34,14 +34,15 @@ if (isset($_POST['name'])) {
                                placeholder="Kees Janssen">
                         <label for="email">E-mail</label>
                         <input type="email" class="form-control form-control-md rounded-0" name="email" id="email"
-                               placeholder="Voorbeeld@email.com" required>
+                               placeholder="Voorbeeld@email.com">
                         <br>
                         <label>Geslacht</label>
-                        <input type="radio" name="sex" value="M" checked required> Man
+                        <input type="radio" name="sex" value="M"> Man
                         <input type="radio" name="sex" value="V"> Vrouw
                         <br>
                         <label>Leeftijdsgroep</label>
-                        <select name="age_range" required>
+                        <select name="age_range">
+                            <option disabled selected value> -- kies een leeftijd -- </option>
                             <option value="0-15">0-15</option>
                             <option value="16-25">16-25</option>
                             <option value="26-35">26-35</option>

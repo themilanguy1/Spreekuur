@@ -43,6 +43,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
                             <br>
                             <label>Leeftijdsgroep *</label>
                             <select name="age_range" required>
+                                <option disabled selected value> -- kies een leeftijd -- </option>
                                 <option value="0-15">0-15</option>
                                 <option value="16-25">16-25</option>
                                 <option value="26-35">26-35</option>

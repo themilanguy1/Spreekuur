@@ -6,18 +6,18 @@ Session::start();
 if (Session::personalQuestionDataStatus()) {
     // Custom alert for empty body part choice.
     if (isset($_GET['lichaam_stelsel']) && !empty($_GET['lichaam_stelsel'])) {
-        $vraag = $_GET['lichaam_stelsel'];
+        $keuze = $_GET['lichaam_stelsel'];
     } else {
         ?>
         <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-            <h4 class='alert-heading'>Warning Message!</h4>
-            <p>Maak een keuze voor vraag a.u.b.</p>
+            <h4 class='alert-heading'>U heeft nog geen keuze gemaakt.</h4>
+            <p>Kies a.u.b. een lichaamssstelsel als onderwerp voor uw vraag.</p>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
             </button>
         </div>
         <?php
-        $vraag = null;
+        $keuze = null;
     }
 
     // Custom alert for empty text field in form.
@@ -39,8 +39,8 @@ if (Session::personalQuestionDataStatus()) {
     } else {
         ?>
         <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-            <h4 class='alert-heading'>Warning Message!</h4>
-            <p>Typ iets in het veld</p>
+            <h4 class='alert-heading'>U heeft nog geen vraag ingevuld.</h4>
+            <p>Typ a.u.b. uw vraag in het tekstveld.</p>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
             </button>
@@ -63,23 +63,29 @@ if (Session::personalQuestionDataStatus()) {
         <div class="row">
             <div class="col-xl-12">
                 <div class="card rounded-0">
-                    <div class="card-header">
-                        <h1 class="mb-0">Uw keuze is : <?= $vraag ?></h1>
-                    </div>
-                    <div class="card-body bg-light">
-                        <form method="post">
+                    <form method="post">
+                        <div class="card-header">
+                            <h2 class="mb-0">Uw keuze is :
+                                <select name="lichaam_stelsel">
+                                    <?php
+                                    Utility::generateQuestionBodyPartDropdown($keuze);
+                                    ?>
+                                </select>
+                            </h2>
+
+                        </div>
+                        <div class=" card-body bg-light">
                             <div class="form-group">
-                                <label for="question_textarea">Example textarea</label>
+                                <label for="question_textarea">Uw vraag:</label>
                                 <textarea name="question_form_text" class="form-control" rows="10"></textarea>
                             </div>
-                            <a href="stelsel_keuze.php" class="btn btn-primary btn-lg float-left" id="btnBack"><i
-                                        class="fas fa-undo"></i>&nbspTerug</a>
-                            <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnSend"><i
-                                        class="far fa-share-square"></i>Stuur
+                            <a href="stelsel_keuze.php" class="btn btn-primary btn-lg float-left" id="btnBack">
+                                <i class="fas fa-undo"></i>&nbspTerug</a>
+                            <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnSend">
+                                <i class="far fa-share-square"></i>&nbspStuur
                             </button>
-                        </form>
-                        <br>
-                    </div>
+                    </form>
+                    <br>
                 </div>
             </div>
         </div>

@@ -21,31 +21,25 @@ Session::start();
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12">
-            <span class="border border-primary">
-                <a href="feedback/feedback_geven.php">
-                    <img src="img/feedback.jpg" alt="feedback" class="rounded mx-auto d-block"
-                         style="width:200px;height:200px;">
-                </a>
-            </span>
+            <a href="feedback/feedback_geven.php">
+                <img src="img/feedback.jpg" alt="feedback" class="rounded mx-auto d-block"
+                     style="width:200px;height:200px;">
+            </a>
         </div>
 
         <br>
         <div class="col-lg-12">
-            <span class="border border-primary">
-                <a href="vragen/stelsel_keuze.php">
-                    <img src="img/vragen.jpg" alt="vraag stellen" class="rounded mx-auto d-block"
-                         style="width:200px;height:200px;">
-                </a>
-            </span>
+            <a href="vragen/stelsel_keuze.php">
+                <img src="img/vragen.jpg" alt="vraag stellen" class="rounded mx-auto d-block"
+                     style="width:200px;height:200px;">
+            </a>
         </div>
         <br>
         <div class="col-lg-12">
-            <span class="border border-primary">
-                <a href="inbox.php">
-                    <img src="img/mail.png" alt="berichten inbox" class="rounded mx-auto d-block"
-                         style="width:200px;height:200px;">
-                </a>
-            </span>
+            <a href="inbox.php">
+                <img src="img/mail.png" alt="berichten inbox" class="rounded mx-auto d-block"
+                     style="width:200px;height:200px;">
+            </a>
         </div>
         <br>
 
