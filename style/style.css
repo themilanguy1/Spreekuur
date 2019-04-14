@@ -1,3 +1,32 @@
-.background{
+.background {
     background-image: linear-gradient(to bottom, #0e61de, #0092ff, #00b4e1, #00cd8c, #5cdc0a);
+}
+
+input[type="radio"]
+{
+    display: none;
+}
+
+input[type="radio"] + label > img
+{
+    border: solid 4px transparent;
+    width: 100%;
+    cursor: pointer;
+    opacity: .5;
+}
+input[type="radio"]:checked + label > img
+{
+    border-color: aqua;
+    opacity: 1;
+}
+
+input[type="radio"] + label
+{
+    width: 150px;
+    display: block;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
