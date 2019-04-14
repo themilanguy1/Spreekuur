@@ -1,5 +1,5 @@
 <?php
-require_once('classes/Autoloader.php');
+require_once('../classes/Autoloader.php');
 Session::start();
 
 if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
@@ -8,7 +8,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
         $_POST['medication'], $_POST['health_issues'], $_POST['extra_personal_info']
     );
     $question_personal_data->updatePersonalData();
-    header('Location: vragen.php');
+    header('Location: stelsel_keuze.php');
 }
 ?>
 <html lang="nl">
@@ -16,7 +16,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../style/bootstrap.css">
 </head>
 <body>
 <div class="card rounded-0">
@@ -77,7 +77,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
                           name="extra_personal_info"
                           placeholder="allergie/roken/drinken"></textarea>
             </div>
-            <a href="home.php">
+            <a href="../home.php">
                 <button type="button" class="btn btn-primary btn-lg float-left">Terug</button>
             </a>
             <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Verder

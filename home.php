@@ -2,6 +2,7 @@
 require_once('classes/Autoloader.php');
 Session::start();
 ?>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,7 +17,7 @@ Session::start();
 <div class="container-fluid">
     <div class="row justify-content-md-center">
         <span class="border border-primary">
-    <a href="feedback.php">
+    <a href="feedback/feedback_geven.php">
         <img src="img/feedback.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
              style="width:200px;height:200px;">
     </a>
@@ -25,7 +26,7 @@ Session::start();
     <br>
     <div class="row justify-content-md-center">
       <span class="border border-primary">
-<a href="vragen.php">
+<a href="vragen/stelsel_keuze.php">
         <img src="img/vragen.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
              style="width:200px;height:200px;">
     </a>

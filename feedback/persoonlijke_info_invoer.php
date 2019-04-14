@@ -1,5 +1,5 @@
 <?php
-require_once('classes/Autoloader.php');
+require_once('../classes/Autoloader.php');
 Session::start();
 
 if (isset($_POST['name'])) {
@@ -7,7 +7,7 @@ if (isset($_POST['name'])) {
         $_POST['name'], $_POST['email'], $_POST['sex'], $_POST['age_range']
     );
     $feedback_personal_data->updatePersonalData();
-    header('Location: feedback.php');
+    header('Location: feedback_geven.php');
 }
 ?>
 <html lang="nl">
@@ -15,7 +15,7 @@ if (isset($_POST['name'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../style/bootstrap.css">
 </head>
 <body>
 <div class="card rounded-0">
@@ -50,7 +50,7 @@ if (isset($_POST['name'])) {
                     <option value="86+">86+</option>
                 </select>
             </div>
-            <a href="home.php">
+            <a href="../home.php">
                 <button type="button" class="btn btn-primary btn-lg float-left">Terug</button>
             </a>
             <button type="submit" name="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Verder

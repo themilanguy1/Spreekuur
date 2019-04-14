@@ -13,7 +13,7 @@ class Utility
      *
      *  Connects Server to database using PDO.
      */
-    public function pdoConnect($servername = "localhost", $username = "root", $password = NULL)
+    public static function pdoConnect($servername = "localhost", $username = "root", $password = NULL)
     {
         try {
             $conn = new PDO("mysql:host=$servername;dbname=spreekuur_database", $username, $password);
@@ -26,53 +26,26 @@ class Utility
         return $conn;
     }
 
+    /**
+     * @param $id_column
+     *  string Name of id column in table.
+     * @param $table
+     *  string Name of table in database.
+     * @return int|mixed
+     *
+     * returns appropriate new id for table.
+     */
+    public static function GetNewSqlId($id_column, $table)
+    {
+        $conn = self::PDOConnect();
+        $users = $conn->query("SELECT COUNT($id_column) FROM $table")->fetchColumn();
 
-
-
-//    /**
-//     * @return mixed
-//     *
-//     *  Gets new user ID from database table gebruikers.
-//     */
-//    public static function GetNewUserId()
-//    {
-//        $conn = self::PDOConnect();
-//        $users = $conn->query("SELECT COUNT(gebruiker_id) FROM gebruikers")->fetchColumn();
-//
-//        if ($users >= 1) {
-//            $new_id = $conn->query("SELECT MAX(gebruiker_id) + 1 FROM gebruikers")->fetchColumn();
-//        } else {
-//            // No users in table yet.
-//            $new_id = 1;
-//        }
-//        return $new_id;
-//    }
-//
-//    /**
-//     * @param $pass
-//     * @return mixed
-//     *
-//     * Encrypts passwords.
-//     */
-//    public static function EncryptPassword($pass)
-//    {
-//        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
-//        return $hashed_pass;
-//    }
-//
-//    /**
-//     * @param $pass
-//     * @param $hashed_pass
-//     * @return bool
-//     *
-//     * Verifies encrypted passwords.
-//     */
-//    public static function VerifyEncryptedPassword($pass, $hashed_pass)
-//    {
-//        if (password_verify($pass, $hashed_pass)) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
+        if ($users >= 1) {
+            $new_id = $conn->query("SELECT MAX($id_column) + 1 FROM $table")->fetchColumn();
+        } else {
+            // No users in table yet.
+            $new_id = 1;
+        }
+        return $new_id;
+    }
 }
