@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../style/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <title>Feedback geven</title>
 </head>
 <script type="text/javascript" src="../script/font-awesome/font-awesome.js"></script>
 <body>
@@ -76,4 +77,4 @@ if (Session::feedbackPersonalDataStatus()) {
     </div>
 </div>
 </body>
-<html>
+</html>

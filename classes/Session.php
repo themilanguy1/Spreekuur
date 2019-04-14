@@ -12,20 +12,21 @@ class Session
     {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
+            return false;
+        } else {
+            return true;
         }
     }
 
     /**
      * Logs user out and redirects to Home.php .
      */
-    public static function destroySession()
+    public static function unsetSession()
     {
         if  (Session::start()){
-            session_destroy();
-            header('Location: home.php');
+            session_unset();
             die;
         } else {
-            header('Location: home.php');
             die;
         }
     }
@@ -33,11 +34,11 @@ class Session
     /**
      * @return bool
      *
-     * Checks question personal data status.
+     * Checks personal question data status.
      */
-    public static function questionPersonalDataStatus()
+    public static function personalQuestionDataStatus()
     {
-        if (isset($_SESSION['question_personal_data_given']) && $_SESSION['question_personal_data_given'] == true) {
+        if (isset($_SESSION['personal_question_data_given']) && $_SESSION['personal_question_data_given'] == true) {
             return true;
         } else {
             return false;
@@ -47,11 +48,11 @@ class Session
     /**
      * @return bool
      *
-     * Checks feedback personal data status.
+     * Checks personal feedback data status.
      */
-    public static function feedbackPersonalDataStatus()
+    public static function personalFeedbackDataStatus()
     {
-        if (isset($_SESSION['feedback_personal_data_given']) && $_SESSION['feedback_personal_data_given'] == true) {
+        if (isset($_SESSION['personal_feedback_data_given']) && $_SESSION['personal_feedback_data_given'] == true) {
             return true;
         } else {
             return false;
