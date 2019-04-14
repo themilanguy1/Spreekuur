@@ -6,52 +6,44 @@
 class Question
 {
     /**
-     * @var array Data from question form.
+     * @var string Part of body chosen as topic of question.
      */
-    protected $question_data = [];
+    protected $body_part;
 
     /**
-     * @var PDO Pdo connection.
+     * @var string Question.
      */
-    protected $db;
+    protected $question;
 
     /**
      * Question constructor.
-     * @param $question_form_input
-     * @param $body_part_input
+     * @param $body_part
+     * @param $question
      */
-    public function __construct($question_form_input, $body_part_input)
+    public function __construct($body_part, $question)
     {
-        $this->question_data = array(
-            "question_form_input" => $question_form_input,
-            "body_part_input" => $body_part_input
-        );
-        $this->db = Utility::pdoConnect();
+        $this->body_part = $body_part;
+        $this->question = $question;
     }
 
     /**
-     * @return bool
+     * @param $user_id
+     *  int Matching user id to question.
      *
-     *
+     * Saves question in database with according user_id.
      */
-    public function saveQuestion()
+    public function insertIntoDatabase($user_id)
     {
-        //Send data to SQL? OR Save data to SESSION?
-        if (isset($this->question_data)) {
-            //TODO: Save data to DATABASE->PDO (Fix error)
-//            $pdo =
-//            $extractemail = $_SESSION['question_personal_data']['email'];
-//            $extractquestiondata = $this->question_data;
-//            var_dump($extractquestiondata);
-//            foreach ($extractquestiondata as $data) {
-//            $conn = $this->db->pdoConnect();
-//            $query = "INSERT INTO vragen (user_id,vraag,choice) values (:id, :question, :choice);";
-//            $pdo = $conn->prepare($query);
-//            $pdo->bindParam('user_id', $id, PDO::PARAM_INT);
-//            $pdo->bindParam('question', $data['question_form'], PDO::PARAM_INT);
-//            $pdo->bindParam('choice', $data['question_choice'], PDO::PARAM_INT);
-//            }
-//            $pdo->execute();
+        if (isset($this->body_part, $this->question)) {
+            $conn = Utility::pdoConnect();
+
+            $id = Utility::GetNewSqlId("id", "vragen");
+            $insert_question = $conn->prepare("INSERT INTO vragen (id, user_id, lichaam_stelsel, vraag) VALUES (:id, :user_id, :body_part, :question)");
+            $insert_question->bindParam(':id', $id);
+            $insert_question->bindParam(':user_id', $user_id);
+            $insert_question->bindParam(':body_part', $this->body_part);
+            $insert_question->bindParam(':question', $this->question);
+            $insert_question->execute();
         } else {
             echo "bewaren van bericht is niet gelukt.";
         }

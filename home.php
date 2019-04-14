@@ -1,6 +1,9 @@
 <?php
 require_once('classes/Autoloader.php');
 Session::start();
+
+//TODO fix spans with border:primary.
+// Dont know whats wrong with them.
 ?>
 
 <html>
@@ -10,41 +13,46 @@ Session::start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
     <!--    <link rel="stylesheet" type="text/css" href="style/style.css">-->
+    <title>home</title>
 </head>
 <script type="text/javascript" src="script/font-awesome/font-awesome.js"></script>
 <body>
 <!--<body class="background">-->
-<div class="container-fluid">
-    <div class="row justify-content-md-center">
-        <span class="border border-primary">
-    <a href="feedback/feedback_geven.php">
-        <img src="img/feedback.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-             style="width:200px;height:200px;">
-    </a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <span class="border border-primary">
+                <a href="feedback/feedback_geven.php">
+                    <img src="img/feedback.jpg" alt="feedback" class="rounded mx-auto d-block"
+                         style="width:200px;height:200px;">
+                </a>
             </span>
-    </div>
-    <br>
-    <div class="row justify-content-md-center">
-      <span class="border border-primary">
-<a href="vragen/stelsel_keuze.php">
-        <img src="img/vragen.jpg" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-             style="width:200px;height:200px;">
-    </a>
-      </span>
-    </div>
-    <br>
-    <div class="row justify-content-md-center">
-          <span class="border border-primary">
-    <a href="inbox.php">
-        <img src="img/mail.png" alt="Geen afbeelding gevonden" class="rounded mx-auto d-block"
-             style="width:200px;height:200px;">
-    </a>
-          </span>
-    </div>
-    <br>
-    <div class="col-16 align-bottom col-lg">
-        <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i
-                    class="far fa-question-circle"></i>&nbspHelp</a>
+        </div>
+
+        <br>
+        <div class="col-lg-12">
+            <span class="border border-primary">
+                <a href="vragen/stelsel_keuze.php">
+                    <img src="img/vragen.jpg" alt="vraag stellen" class="rounded mx-auto d-block"
+                         style="width:200px;height:200px;">
+                </a>
+            </span>
+        </div>
+        <br>
+        <div class="col-lg-12">
+            <span class="border border-primary">
+                <a href="inbox.php">
+                    <img src="img/mail.png" alt="berichten inbox" class="rounded mx-auto d-block"
+                         style="width:200px;height:200px;">
+                </a>
+            </span>
+        </div>
+        <br>
+
+        <div class="col-16 align-bottom col-lg">
+            <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i
+                        class="far fa-question-circle"></i>&nbspHelp</a>
+        </div>
     </div>
 </div>
 </body>

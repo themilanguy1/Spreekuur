@@ -9,10 +9,11 @@ Session::start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../style/bootstrap.css">
+    <title>feedback verstuurd</title>
 </head>
 <script type="text/javascript" src="../script/font-awesome/font-awesome.js"></script>
 <body>
-<div class="container-fluid">
+<div class="container">
     <h1 class="text-center">Bedankt voor u feedback!</h1>
     <h4 class="text-center">Hier zal text toevoegt zijn.</h4>
     <div class="col-16 align-bottom col-lg">
