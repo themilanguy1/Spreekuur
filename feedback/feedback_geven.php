@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 <script type="text/javascript" src="../script/font-awesome/font-awesome.js"></script>
 <body>
 <?php
-if (Session::feedbackPersonalDataStatus()) {
+if (Session::personalFeedbackDataStatus()) {
     echo "<a href='persoonlijke_info_invoer.php'>opnieuw informatie toevoegen</a>";
     echo "<br />";
     echo "hier komt de feedback invoer.";
