@@ -32,7 +32,7 @@ class Question
      *
      * Saves question in database with according user_id.
      */
-    public function insertIntoDatabase($user_id)
+    public function saveQuestionInDatabase($user_id)
     {
         if (isset($this->body_part, $this->question)) {
             $conn = Utility::pdoConnect();

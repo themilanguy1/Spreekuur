@@ -16,8 +16,7 @@ Session::start();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="text-center">Bedankt voor u vraag!</h1>
-                <h4 class="text-center">Hier zal text toevoegt zijn.</h4>
+                <h1 class="text-center">Bedankt voor uw vraag!</h1>
             </div>
             <div class="col-lg-12 align-bottom">
                 <a href="../help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i

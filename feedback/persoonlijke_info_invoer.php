@@ -2,9 +2,9 @@
 require_once('../classes/Autoloader.php');
 Session::start();
 
-if (isset($_POST['name'])) {
+if (isset($_POST['submit'])) {
     $feedback_personal_data = new FeedbackUser(
-        $_POST['name'], $_POST['email'], $_POST['sex'], $_POST['age_range']
+       $_POST['email'], $_POST['sex'], $_POST['age_range']
     );
     $feedback_personal_data->setFeedbackPersonalData();
     header('Location: feedback_geven.php');
@@ -29,20 +29,18 @@ if (isset($_POST['name'])) {
             <div class="card-body bg-light">
                 <form class="form" method="POST">
                     <div class="form-group">
-                        <label>Voornaam</label>
-                        <input type="text" class="form-control form-control-md rounded-0" name="name"
-                               placeholder="Kees Janssen">
                         <label for="email">E-mail</label>
                         <input type="email" class="form-control form-control-md rounded-0" name="email" id="email"
                                placeholder="Voorbeeld@email.com">
                         <br>
                         <label>Geslacht</label>
+                        <input type="hidden" name="sex" value ="">
                         <input type="radio" name="sex" value="M"> Man
                         <input type="radio" name="sex" value="V"> Vrouw
                         <br>
                         <label>Leeftijdsgroep</label>
                         <select name="age_range">
-                            <option disabled selected value> -- kies een leeftijd -- </option>
+                            <option selected value=""> -- kies een leeftijd -- </option>
                             <option value="0-15">0-15</option>
                             <option value="16-25">16-25</option>
                             <option value="26-35">26-35</option>

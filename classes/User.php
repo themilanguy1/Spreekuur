@@ -6,12 +6,6 @@
 class User
 {
     /**
-     * @var int User id.
-     */
-    protected $user_id;
-
-    protected $name;
-    /**
      * @var string email.
      */
     protected $email;
@@ -27,12 +21,11 @@ class User
     protected $age_range;
 
     /**
-     * User constructor.
-     * @param $email
-     * @param $sex
-     * @param $age_range
-     * @param null $user_id
+     * @var int User id.
      */
+    protected $user_id;
+
+
     public function __construct($email, $sex, $age_range, $user_id = null)
     {
         $this->user_id = $user_id;

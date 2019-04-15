@@ -17,11 +17,6 @@ if (Session::personalQuestionDataStatus()) {
     <body>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <a href='persoonlijke_info_invoer.php'>
-                    <button class="btn btn-primary">opnieuw informatie toevoegen</button>
-                </a>
-            </div>
             <div class="col-lg-12" style="margin-top:1em;">
                 <form method="get">
                     <div class="justify-content-md-center">

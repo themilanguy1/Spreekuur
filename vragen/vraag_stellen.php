@@ -24,15 +24,16 @@ if (Session::personalQuestionDataStatus()) {
     if (isset($_POST['question_form_text']) && !empty($_POST['question_form_text'])) {
         // Get new id for user.
         $new_id = Utility::GetNewSqlId("id", "user");
+
         // Save user in database.
-        $user = new QuestionUser($_SESSION['question_name'], $_SESSION['question_email'], $_SESSION['question_sex'],
-            $_SESSION['question_age_range'], $_SESSION['question_phone_number'], $_SESSION['question_medication'],
+        $user = new QuestionUser($_SESSION['question_email'], $_SESSION['question_sex'], $_SESSION['question_age_range'],
+            $_SESSION['question_name'], $_SESSION['question_phone_number'], $_SESSION['question_medication'],
             $_SESSION['question_health_issues'], $_SESSION['question_extra_info'], $new_id);
-        $user->insertIntoDatabase();
+        $user->saveUserInDatabase();
 
         // Save question in database.
         $question = new Question($_GET['lichaam_stelsel'], $_POST['question_form_text']);
-        $question->insertIntoDatabase($user->getUserId());
+        $question->saveQuestionInDatabase($user->getUserId());
 
         // Successful input, redirect user to success page.
         header('Location: vraag_verstuurd.php');
@@ -65,19 +66,19 @@ if (Session::personalQuestionDataStatus()) {
                 <div class="card rounded-0">
                     <form method="post">
                         <div class="card-header">
-                            <h2 class="mb-0">Uw keuze is :
-                                <select name="lichaam_stelsel">
+                            <h2 class="mb-0">Vraag stellen: </h2>
+                        </div>
+                        <div class=" card-body bg-light">
+                            <div class="form-group">
+                                <label for="lichaam_stelsel">Uw keuze: </label>
+                                <select class="form-control form-control-md rounded-0" name="lichaam_stelsel">
                                     <?php
                                     Utility::generateQuestionBodyPartDropdown($keuze);
                                     ?>
                                 </select>
-                            </h2>
-
-                        </div>
-                        <div class=" card-body bg-light">
-                            <div class="form-group">
+                                <br>
                                 <label for="question_textarea">Uw vraag:</label>
-                                <textarea name="question_form_text" class="form-control" rows="10"></textarea>
+                                <textarea class="form-control form-control-md rounded-0" name="question_form_text" class="form-control" rows="10"></textarea>
                             </div>
                             <a href="stelsel_keuze.php" class="btn btn-primary btn-lg float-left" id="btnBack">
                                 <i class="fas fa-undo"></i>&nbspTerug</a>

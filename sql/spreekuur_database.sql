@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 14 apr 2019 om 21:10
+-- Gegenereerd op: 15 apr 2019 om 01:39
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.11
 
@@ -36,6 +36,16 @@ CREATE TABLE `feedback` (
   `feedback` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `user_id`, `tevredenheid`, `zorginstelling`, `feedback`) VALUES
+(8, 14, 'slecht', 'ErasmusMC', ''),
+(9, 17, 'slecht', 'Revalidatiecentrumrotterdamzuid', ''),
+(10, 18, 'slecht', 'Revalidatiecentrumrotterdamzuid', ''),
+(11, 19, 'slecht', 'Revalidatiecentrumrotterdamzuid', '');
+
 -- --------------------------------------------------------
 
 --
@@ -47,8 +57,8 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `geslacht` varchar(1) NOT NULL,
   `leeftijdsgroep` varchar(20) NOT NULL,
-  `telefoon` int(15) NOT NULL,
   `naam` varchar(255) NOT NULL,
+  `telefoon` int(15) NOT NULL,
   `medicatie` varchar(255) NOT NULL,
   `gezondheidsklachten` varchar(255) NOT NULL,
   `extra_info` varchar(255) NOT NULL
@@ -58,16 +68,26 @@ CREATE TABLE `user` (
 -- Gegevens worden geëxporteerd voor tabel `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `geslacht`, `leeftijdsgroep`, `telefoon`, `naam`, `medicatie`, `gezondheidsklachten`, `extra_info`) VALUES
-(1, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(2, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(3, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(4, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(5, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(6, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(7, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(8, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', ''),
-(9, 'M', '0', 'Milan Gupta', 627359483, 'milan.gupta@ymail.com', '', '', '');
+INSERT INTO `user` (`id`, `email`, `geslacht`, `leeftijdsgroep`, `naam`, `telefoon`, `medicatie`, `gezondheidsklachten`, `extra_info`) VALUES
+(1, 'M', '0', '', 'wefe@srgrg.com', 0, '', '', ''),
+(2, 'wefe@srgrg.com', 'M', '66-75', '', 0, '', '', ''),
+(3, '627359483', 'm', 'V', 'Milan Gupta', 0, '', '', ''),
+(4, 'Milan Gupta', 'm', 'M', '627359483', 0, '', '', ''),
+(5, 'Milan Gupta', 'm', 'M', '16-25', 627359483, '', '', ''),
+(6, 'milan.gupta@ymail.com', 'M', '0-15', 'Milan Gupta', 627359483, '', '', ''),
+(7, 'milan.gupta@ymail.com', 'M', '0-15', 'Milan Gupta', 627359483, '', '', ''),
+(8, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(9, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(10, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(11, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(12, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(13, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(14, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(15, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(16, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(17, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(18, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', ''),
+(19, 'wefe@srgrg.com', 'M', '0-15', '', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -87,14 +107,13 @@ CREATE TABLE `vragen` (
 --
 
 INSERT INTO `vragen` (`id`, `user_id`, `lichaam_stelsel`, `vraag`) VALUES
-(1, 1, '3', 'hallo daar'),
-(2, 3, '3', 'hallo daar'),
-(3, 4, '3', 'w'),
-(4, 5, '1', 'wdwdwd'),
-(5, 6, '1', 'wewrwe'),
-(6, 7, '1', 'wewrwe'),
-(7, 8, '3', 'wdwd'),
-(8, 9, '3', 'wdqwdqw');
+(1, 1, 'Orgaan stelsel', ' wdw'),
+(2, 2, 'Orgaan stelsel', 'ww'),
+(3, 3, 'Orgaan stelsel', 'w'),
+(4, 4, 'Orgaan stelsel', 'w'),
+(5, 5, 'Orgaan stelsel', 'w'),
+(6, 6, 'Orgaan stelsel', 'wwd'),
+(7, 7, 'Orgaan stelsel', 'w');
 
 --
 -- Indexen voor geëxporteerde tabellen
