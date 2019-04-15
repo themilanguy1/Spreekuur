@@ -32,7 +32,7 @@ if (Session::personalQuestionDataStatus()) {
         $user->saveUserInDatabase();
 
         // Save question in database.
-        $question = new Question($_GET['lichaam_stelsel'], $_POST['question_form_text']);
+        $question = new Question($_POST['lichaam_stelsel'], $_POST['question_form_text']);
         $question->saveQuestionInDatabase($user->getUserId());
 
         // Successful input, redirect user to success page.
