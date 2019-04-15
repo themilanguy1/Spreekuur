@@ -70,14 +70,14 @@ if (Session::personalQuestionDataStatus()) {
                         </div>
                         <div class=" card-body bg-light">
                             <div class="form-group">
-                                <label for="lichaam_stelsel">Uw keuze: </label>
+                                <label for="lichaam_stelsel">Lichaamsstelsel in kwestie: </label>
                                 <select class="form-control form-control-md rounded-0" name="lichaam_stelsel">
                                     <?php
                                     Utility::generateQuestionBodyPartDropdown($keuze);
                                     ?>
                                 </select>
                                 <br>
-                                <label for="question_textarea">Uw vraag:</label>
+                                <label for="question_textarea">Vraag:  </label>
                                 <textarea class="form-control form-control-md rounded-0" name="question_form_text" class="form-control" rows="10"></textarea>
                             </div>
                             <a href="stelsel_keuze.php" class="btn btn-primary btn-lg float-left" id="btnBack">
