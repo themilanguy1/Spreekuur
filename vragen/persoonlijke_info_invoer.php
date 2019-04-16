@@ -48,7 +48,6 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
                                 <option value="0-15">0-15</option>
                                 <option value="16-25">16-25</option>
                                 <option value="26-35">26-35</option>
-                                <option value="26-35">26-35</option>
                                 <option value="46-55">46-55</option>
                                 <option value="56-65">56-65</option>
                                 <option value="66-75">66-75</option>
