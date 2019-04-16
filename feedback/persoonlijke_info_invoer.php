@@ -37,6 +37,7 @@ if (isset($_POST['submit'])) {
                         <input type="hidden" name="sex" value ="">
                         <input type="radio" name="sex" value="M"> Man
                         <input type="radio" name="sex" value="V"> Vrouw
+                        <input type="radio" name="sex" value="anders"> Anders
                         <br>
                         <label>Leeftijdsgroep</label>
                         <select name="age_range">

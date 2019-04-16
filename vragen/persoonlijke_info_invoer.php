@@ -41,6 +41,7 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
                             <label>Geslacht * </label>
                             <input type="radio" name="sex" value="M" checked required> Man
                             <input type="radio" name="sex" value="V"> Vrouw
+                            <input type="radio" name="sex" value="anders"> Anders
                             <br>
                             <label>Leeftijdsgroep *</label>
                             <select name="age_range" required>
