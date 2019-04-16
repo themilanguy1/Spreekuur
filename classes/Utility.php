@@ -57,7 +57,7 @@ class Utility
      * Currently selected parameter decides selected option.
      */
     public static function generateQuestionBodyPartDropdown($selected_option) {
-        $options = array("Orgaan stelsel", "Circulatie stelsel", "Spijsverteringsstelsel",
+        $options = array("Circulatie stelsel", "Spijsverteringsstelsel",
             "Urinewegstelsel", "Ademhalingsstelsel", "Huid", "Hormonale stelsel",
             "Zenuwstelsel", "Sensorisch stelsel", "Motorisch stelsel", "Voorplantingsstelsel"
             );

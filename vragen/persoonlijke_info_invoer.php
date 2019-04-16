@@ -8,7 +8,8 @@ if (isset($_POST['email'], $_POST['sex'], $_POST['age_range'])) {
         $_POST['medication'], $_POST['health_issues'], $_POST['extra_info']
     );
     $question_personal_data->setQuestionPersonalData();
-    header('Location: stelsel_keuze.php');
+	// TODO when stelsel_keuze.php is working, redirect to stelsel_keuze.php again
+    header('Location: vraag_stellen.php');
 }
 ?>
 <html lang="nl">

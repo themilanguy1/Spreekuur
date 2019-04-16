@@ -1,9 +1,9 @@
 <?php
-require_once('classes/Autoloader.php');
-Session::start();
-
-//TODO fix spans with border:primary.
-// Dont know whats wrong with them.
+	require_once('classes/Autoloader.php');
+	Session::start();
+	
+	//TODO fix spans with border:primary.
+	// Dont know whats wrong with them.
 ?>
 
 <html>
@@ -19,29 +19,28 @@ Session::start();
 <body>
 <!--<body class="background">-->
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-12">
-            <a href="feedback/feedback_geven.php">
-                <img src="img/feedback.jpg" alt="feedback" class="rounded mx-auto d-block"
-                     style="width:200px;height:200px;">
-            </a>
-        </div>
-
-        <br>
-        <div class="col-lg-12">
+    <div class="row ">
+        <div class="col-lg-12" align="center" style="margin-top:1em;">
+            <h4>Vraag stellen</h4>
             <a href="vragen/stelsel_keuze.php">
-                <img src="img/vragen.jpg" alt="vraag stellen" class="rounded mx-auto d-block"
+                <img src="img/002-feedback.png" alt="vraag stellen" class="rounded mx-auto d-block"
                      style="width:200px;height:200px;">
             </a>
         </div>
-        <br>
-        <div class="col-lg-12">
+        <div class="col-lg-12" align="center" style="margin-top:1em;">
+            <h4>Feedback geven</h4>
+            <a href="feedback/feedback_geven.php">
+                <img src="img/001-info.png" alt="feedback" class="rounded mx-auto d-block"
+                     style="width:200px;height:200px;">
+            </a>
+        </div>
+        <div class="col-lg-12" align="center" style="margin-top:1em;">
+            <h4>Berichten inbox</h4>
             <a href="inbox.php">
-                <img src="img/mail.png" alt="berichten inbox" class="rounded mx-auto d-block"
+                <img src="img/003-files-and-folders.png" alt="berichten inbox" class="rounded mx-auto d-block"
                      style="width:200px;height:200px;">
             </a>
         </div>
-        <br>
 
         <div class="col-16 align-bottom col-lg">
             <a href="help.php" class="btn btn-primary btn-lg float-left " id="btnHelp"><i

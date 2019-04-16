@@ -72,6 +72,7 @@ if (Session::personalQuestionDataStatus()) {
                             <div class="form-group">
                                 <label for="lichaam_stelsel">Lichaamsstelsel in kwestie: </label>
                                 <select class="form-control form-control-md rounded-0" name="lichaam_stelsel">
+                                    <option disabled selected>-- Kies een lichaamsstelsel als onderwerp --</option>
                                     <?php
                                     Utility::generateQuestionBodyPartDropdown($keuze);
                                     ?>

@@ -29,7 +29,19 @@ class QuestionUser extends User
      * @var string Extra info.
      */
     protected $extra_info;
-
+	
+	/**
+	 * QuestionUser constructor.
+	 * @param $email
+	 * @param $sex
+	 * @param $age_range
+	 * @param $name
+	 * @param $phone_number
+	 * @param $medication
+	 * @param $health_issues
+	 * @param $extra_info
+	 * @param null $user_id
+	 */
     public function __construct($email, $sex, $age_range, $name, $phone_number, $medication, $health_issues,
                                 $extra_info, $user_id = null)
     {
